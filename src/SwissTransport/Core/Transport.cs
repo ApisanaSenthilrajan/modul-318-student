@@ -16,10 +16,10 @@
 
         public Stations GetStations(string query)
         {
-            if (string.IsNullOrEmpty(query))
-            {
-                throw new ArgumentNullException(nameof(query));
-            }
+            //if (string.IsNullOrEmpty(query))
+            //{
+            //    throw new ArgumentNullException(nameof(query));
+            //}
 
             var uri = new Uri($"{WebApiHost}locations?query={query}");
             return HttpClient.GetObject(uri, JsonConvert.DeserializeObject<Stations>);
