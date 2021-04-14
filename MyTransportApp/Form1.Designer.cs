@@ -28,31 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.StartStationTextbox = new System.Windows.Forms.TextBox();
-            this.EndStationTextbox = new System.Windows.Forms.TextBox();
             this.StartStationLable = new System.Windows.Forms.Label();
             this.EndStationLable = new System.Windows.Forms.Label();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Train = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Platform = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartStationTextbox = new System.Windows.Forms.ComboBox();
+            this.EndStationTextbox = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // StartStationTextbox
-            // 
-            this.StartStationTextbox.Location = new System.Drawing.Point(38, 55);
-            this.StartStationTextbox.Name = "StartStationTextbox";
-            this.StartStationTextbox.Size = new System.Drawing.Size(178, 20);
-            this.StartStationTextbox.TabIndex = 0;
-            this.StartStationTextbox.TextChanged += new System.EventHandler(this.StartStationTextbox_TextChanged);
-            this.StartStationTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.StartStationTextbox_KeyPress);
-            // 
-            // EndStationTextbox
-            // 
-            this.EndStationTextbox.Location = new System.Drawing.Point(249, 55);
-            this.EndStationTextbox.Name = "EndStationTextbox";
-            this.EndStationTextbox.Size = new System.Drawing.Size(178, 20);
-            this.EndStationTextbox.TabIndex = 1;
-            this.EndStationTextbox.TextChanged += new System.EventHandler(this.EndStationTextbox_TextChanged);
             // 
             // StartStationLable
             // 
@@ -87,50 +74,87 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // listBox1
+            // dataGridView1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(38, 72);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(178, 43);
-            this.listBox1.TabIndex = 5;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Time,
+            this.Train,
+            this.Platform,
+            this.Duration});
+            this.dataGridView1.Location = new System.Drawing.Point(38, 152);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(440, 150);
+            this.dataGridView1.TabIndex = 7;
             // 
-            // listBox2
+            // Time
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(249, 72);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(178, 43);
-            this.listBox2.TabIndex = 6;
+            this.Time.HeaderText = "Time";
+            this.Time.Name = "Time";
+            // 
+            // Train
+            // 
+            this.Train.HeaderText = "Train";
+            this.Train.Name = "Train";
+            // 
+            // Platform
+            // 
+            this.Platform.HeaderText = "Platform";
+            this.Platform.Name = "Platform";
+            // 
+            // Duration
+            // 
+            this.Duration.HeaderText = "Duration";
+            this.Duration.Name = "Duration";
+            // 
+            // StartStationTextbox
+            // 
+            this.StartStationTextbox.FormattingEnabled = true;
+            this.StartStationTextbox.Location = new System.Drawing.Point(38, 58);
+            this.StartStationTextbox.Name = "StartStationTextbox";
+            this.StartStationTextbox.Size = new System.Drawing.Size(121, 21);
+            this.StartStationTextbox.TabIndex = 8;
+            this.StartStationTextbox.TextChanged += new System.EventHandler(this.StartStationTextbox_TextChanged_1);
+            // 
+            // EndStationTextbox
+            // 
+            this.EndStationTextbox.FormattingEnabled = true;
+            this.EndStationTextbox.Location = new System.Drawing.Point(242, 57);
+            this.EndStationTextbox.Name = "EndStationTextbox";
+            this.EndStationTextbox.Size = new System.Drawing.Size(121, 21);
+            this.EndStationTextbox.TabIndex = 9;
+            this.EndStationTextbox.TextChanged += new System.EventHandler(this.EndStationTextbox_TextChanged_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.EndStationTextbox);
+            this.Controls.Add(this.StartStationTextbox);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.EndStationLable);
             this.Controls.Add(this.StartStationLable);
-            this.Controls.Add(this.EndStationTextbox);
-            this.Controls.Add(this.StartStationTextbox);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox StartStationTextbox;
-        private System.Windows.Forms.TextBox EndStationTextbox;
         private System.Windows.Forms.Label StartStationLable;
         private System.Windows.Forms.Label EndStationLable;
         private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Train;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Platform;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
+        private System.Windows.Forms.ComboBox StartStationTextbox;
+        private System.Windows.Forms.ComboBox EndStationTextbox;
     }
 }
 
