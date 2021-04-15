@@ -56,6 +56,29 @@
             var uri = new Uri($"{WebApiHost}connections?from={fromStation}&to={toStation}");
             return HttpClient.GetObject(uri, JsonConvert.DeserializeObject<Connections>);
         }
+        public Connections GetConnections2(string fromStation, string toStation, string departure, string time)
+        {
+            if (string.IsNullOrEmpty(fromStation))
+            {
+                throw new ArgumentNullException(nameof(fromStation));
+            }
+
+            if (string.IsNullOrEmpty(toStation))
+            {
+                throw new ArgumentNullException(nameof(toStation));
+            }
+            if (string.IsNullOrEmpty(departure))
+            {
+                throw new ArgumentNullException(nameof(departure));
+            }
+            if (string.IsNullOrEmpty(time))
+            {
+                throw new ArgumentNullException(nameof(time));
+            }
+
+            var uri = new Uri($"{WebApiHost}connections?from={fromStation}&to={toStation}&date={departure}&time={time}");
+            return HttpClient.GetObject(uri, JsonConvert.DeserializeObject<Connections>);
+        }
 
         public void Dispose()
         {

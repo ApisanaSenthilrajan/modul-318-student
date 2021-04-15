@@ -58,7 +58,10 @@ namespace MyTransportApp
 
         private void FutureConnections_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Sorry!\nThis page will be implemented very soon.\nTry again Later");
+            Futurejourney c = new Futurejourney();
+            this.Hide();
+            c.Closed += (s, args) => this.Close();
+            c.Show();
         }
 
         private void SendInformation_Click(object sender, EventArgs e)
