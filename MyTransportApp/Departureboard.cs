@@ -11,41 +11,62 @@ using SwissTransport.Core;
 
 namespace MyTransportApp
 {
-    public partial class Form1 : Form
+    public partial class DepartureBoard : Form
     {
-        public Form1()
+        public DepartureBoard()
         {
             InitializeComponent();
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            //string From = StartStationbox.Text.ToString();
-            //var transport = new Transport();
-            //var stations = transport.GetStations(From);
+            string From = StartStationbox.Text.ToString();
+            var transport = new Transport();
+            var stations = transport.GetStations(From);
+            var Id = transport.GetStations(From).StationList[0].Id.ToString();
+            ConnectinsTable.Rows.Clear();
+            if (stations.StationList.Count >= 1)
+            {
+                var StationBoard = transport.GetStationBoard(From,Id);
+                //Console.WriteLine(connections);
+                for (int i = 0; i <= StationBoard.Entries.Count - 1; i++)
+                {
+                   
+                    
+                    ConnectinsTable.Rows.Add(new[]
+                    {
+                          StationBoard.Entries[i].Stop.Departure.ToString(),
+                          StationBoard.Entries[i].To,
+                       
+                     }) ;
+                }
 
+            }
+            else
+            {
+                MessageBox.Show("Keine Station gefunden");
+            }
+        }
 
+        private void StartStationbox_TextChanged(object sender, EventArgs e)
+        {
+            string From = StartStationbox.Text.ToString();
+            var transport = new Transport();
+            var stations = transport.GetStations(From);
+            //StartStationbox.Items.Clear();
 
-            //if (stations.StationList.Count.Equals(10))
-            //{
-            //    var connections = transport.GetConnections(From);
-            //    for (int i = 0; i <= connections.ConnectionList.Count - 1; i++)
-            //    {
-            //        ConnectinsTable.Rows.Add(new[]
-            //        {
-            //            connections.ConnectionList[i].From.Departure.ToString(),
-            //            connections.ConnectionList[i].From.Platform,
-            //            connections.ConnectionList[i].To.Platform,
-            //            connections.ConnectionList[i].Duration.Remove(0,3),
-            //            connections.ConnectionList[i].From.Delay.ToString()
-            //            });
-            //    }
-            //    //Console.WriteLine(connections);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Keine Station gefunden");
-            //}
+            for (int i = 0; i <= stations.StationList.Count - 1; i++)
+            {
+                StartStationbox.Items.Add(stations.StationList[i].Name);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu c = new Menu();
+            this.Hide();
+            c.Closed += (s, args) => this.Close();
+            c.Show();
         }
     }
 

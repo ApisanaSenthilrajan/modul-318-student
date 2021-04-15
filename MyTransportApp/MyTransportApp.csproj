@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Departureboard.cs">
+    <Compile Include="DepartureBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Departureboard.Designer.cs">
-      <DependentUpon>Departureboard.cs</DependentUpon>
+    <Compile Include="DepartureBoard.Designer.cs">
+      <DependentUpon>DepartureBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Connections.cs">
       <SubType>Form</SubType>
@@ -58,13 +58,22 @@
     <Compile Include="Connections.Designer.cs">
       <DependentUpon>Connections.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Departureboard.resx">
-      <DependentUpon>Departureboard.cs</DependentUpon>
+    <EmbeddedResource Include="DepartureBoard.resx">
+      <DependentUpon>DepartureBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Connections.resx">
       <DependentUpon>Connections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

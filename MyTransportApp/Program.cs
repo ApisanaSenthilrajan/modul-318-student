@@ -16,7 +16,7 @@ namespace MyTransportApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Connections());
+            Application.Run(new Menu());
         }
     }
 }

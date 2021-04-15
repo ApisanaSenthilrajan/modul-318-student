@@ -28,7 +28,7 @@ namespace MyTransportApp
          
           
 
-                if ( stations.StationList.Count.Equals(10) && stationsTo.StationList.Count.Equals(10))
+                if ( stations.StationList.Count >= 1 && stationsTo.StationList.Count >= 1)
                 {
                     var connections = transport.GetConnections(From,To);
                     for (int i = 0; i <= connections.ConnectionList.Count - 1; i++)
@@ -55,7 +55,7 @@ namespace MyTransportApp
             string From = StartStationTextbox.Text.ToString();
             var transport = new Transport();
             var stations = transport.GetStations(From);
-
+           
                 for (int i = 0; i <= stations.StationList.Count - 1; i++)
                 {
                     StartStationTextbox.Items.Add(stations.StationList[i].Name);
@@ -67,11 +67,21 @@ namespace MyTransportApp
             string To = EndStationTextbox.Text.ToString();
             var transport = new Transport();
             var stationsTo = transport.GetStations(To);
+           
+            for (int i = 0; i <= stationsTo.StationList.Count - 1; i++)
+            {
+             
+                EndStationTextbox.Items.Add(stationsTo.StationList[i].Name);
+            }
 
-                for (int i = 0; i <= stationsTo.StationList.Count - 1; i++)
-                {
-                    EndStationTextbox.Items.Add(stationsTo.StationList[i].Name);
-                }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu c = new Menu();
+            this.Hide();
+            c.Closed += (s, args) => this.Close();
+            c.Show();
         }
     }
 }
