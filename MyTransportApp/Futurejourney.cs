@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,7 +46,7 @@ namespace MyTransportApp
 
             if (stations.StationList.Count >= 1 && stationsTo.StationList.Count >= 1)
             {
-                var connections = transport.GetConnections2(From, To, departure,time);
+                var connections = transport.GetConnections2(From, To, departure, time);
                 for (int i = 0; i <= connections.ConnectionList.Count - 1; i++)
                 {
                     ConnectinsTable.Rows.Add(new[]
@@ -94,5 +95,59 @@ namespace MyTransportApp
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConnectinsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        { /*
+            t =Time
+            DS = Departure Station
+            DP = Departure Platform
+            AS = Ariiaval Station
+            AP = Arrival Platform
+            D = Duration
+          */
+            
+            Myjourneys j = new Myjourneys();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.ConnectinsTable.Rows[e.RowIndex];
+                string t = row.Cells["Time"].Value.ToString();
+                string DS = StartStationTextbox.Text.ToString();
+                string DP = row.Cells["Train"].Value.ToString();
+                string AS = EndStationTextbox.Text.ToString();
+                string AP = row.Cells["Platform"].Value.ToString();
+                string D = row.Cells["Duration"].Value.ToString();
+                string path = @"C:\Users\apisa\source\repos\Projekt_M318\Project.txt";
+                string Journey = "Time: " + t + "," + "Departure Station: " + DS + ","+"Departure Platform:" + DP + ","+"Arrival station: " + AS + "," + "Arrival Platform: " + AP + "," + "Duration:  " + D;
+                using (StreamWriter tw = File.AppendText(path))
+                {
+                    
+                   
+                        
+                        
+                            tw.Write(Journey);
+
+                        
+                        tw.WriteLine();
+                    
+                }
+            }
+         
+            this.Hide();
+            j.Closed += (s, args) => this.Close();
+            j.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu c = new Menu();
+            this.Hide();
+            c.Closed += (s, args) => this.Close();
+            c.Show();
+        }
     }
-}
+    }

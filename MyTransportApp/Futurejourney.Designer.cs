@@ -45,6 +45,8 @@
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.timePortionDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.MailButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectinsTable)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +60,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Menu";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -71,11 +74,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bodoni MT", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(198, 20);
+            this.label1.Location = new System.Drawing.Point(174, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 33);
+            this.label1.Size = new System.Drawing.Size(357, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Search Connections";
+            this.label1.Text = "Search Future Connections";
             // 
             // EndStationTextbox
             // 
@@ -108,6 +111,7 @@
             this.ConnectinsTable.Name = "ConnectinsTable";
             this.ConnectinsTable.Size = new System.Drawing.Size(551, 157);
             this.ConnectinsTable.TabIndex = 15;
+            this.ConnectinsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ConnectinsTable_CellContentClick);
             // 
             // Time
             // 
@@ -189,20 +193,44 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Date:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // timePortionDateTimePicker
             // 
             this.timePortionDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePortionDateTimePicker.Location = new System.Drawing.Point(464, 155);
+            this.timePortionDateTimePicker.Location = new System.Drawing.Point(463, 152);
             this.timePortionDateTimePicker.Name = "timePortionDateTimePicker";
             this.timePortionDateTimePicker.Size = new System.Drawing.Size(80, 20);
             this.timePortionDateTimePicker.TabIndex = 22;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bodoni MT Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(459, 125);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 24);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Time:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // MailButton
+            // 
+            this.MailButton.Font = new System.Drawing.Font("Bodoni MT", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MailButton.Location = new System.Drawing.Point(502, 389);
+            this.MailButton.Name = "MailButton";
+            this.MailButton.Size = new System.Drawing.Size(80, 33);
+            this.MailButton.TabIndex = 24;
+            this.MailButton.Text = "E-Mail";
+            this.MailButton.UseVisualStyleBackColor = true;
             // 
             // Futurejourney
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 450);
+            this.Controls.Add(this.MailButton);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.timePortionDateTimePicker);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePicker);
@@ -244,5 +272,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker timePortionDateTimePicker;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button MailButton;
     }
 }

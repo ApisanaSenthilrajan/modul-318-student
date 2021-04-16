@@ -58,6 +58,12 @@
     <Compile Include="Connections.Designer.cs">
       <DependentUpon>Connections.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyJourneys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyJourneys.Designer.cs">
+      <DependentUpon>MyJourneys.cs</DependentUpon>
+    </Compile>
     <Compile Include="Futurejourney.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Futurejourney.resx">
       <DependentUpon>Futurejourney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyJourneys.resx">
+      <DependentUpon>MyJourneys.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -111,6 +120,9 @@
       <Project>{d0262178-a48f-4de0-807b-e76b63e39421}</Project>
       <Name>SwissTransport</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Microsoft\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -79,7 +79,7 @@
             var uri = new Uri($"{WebApiHost}connections?from={fromStation}&to={toStation}&date={departure}&time={time}");
             return HttpClient.GetObject(uri, JsonConvert.DeserializeObject<Connections>);
         }
-
+      
         public void Dispose()
         {
             HttpClient?.Dispose();
