@@ -1,2 +1,2 @@
-Time: 16.04.2021 15:00:00,Departure Station: Luzern,Departure Platform:8,Arrival station: Bern,Arrival Platform: 8,Duration:  01:00:00
-Time: 16.04.2021 13:58:00,Departure Station: St. Gallen,Departure Platform:2,Arrival station: Zug,Arrival Platform: 8,Duration:  01:31:00
+Time: 16.04.2021 16:09:00,Departure Station: Luzern,Departure Platform:3,Arrival station: Herisau,Arrival Platform: 11,Duration:  02:18:00
+Time: 16.04.2021 16:42:00,Departure Station: Jegenstorf,Departure Platform:2,Arrival station: Herisau,Arrival Platform: 4,Duration:  02:30:00

@@ -161,7 +161,6 @@
             this.EndStationLable.TabIndex = 13;
             this.EndStationLable.Text = "To:";
             this.EndStationLable.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.EndStationLable.Click += new System.EventHandler(this.EndStationLable_Click);
             // 
             // StartStationLable
             // 
@@ -181,7 +180,6 @@
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(142, 20);
             this.dateTimePicker.TabIndex = 20;
-            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // label2
             // 
@@ -193,7 +191,6 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Date:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // timePortionDateTimePicker
             // 
@@ -223,6 +220,7 @@
             this.MailButton.TabIndex = 24;
             this.MailButton.Text = "E-Mail";
             this.MailButton.UseVisualStyleBackColor = true;
+            this.MailButton.Click += new System.EventHandler(this.MailButton_Click);
             // 
             // Futurejourney
             // 

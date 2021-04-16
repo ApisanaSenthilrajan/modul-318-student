@@ -43,7 +43,7 @@
             // 
             this.searchConnections.Font = new System.Drawing.Font("Bodoni MT", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchConnections.Location = new System.Drawing.Point(135, 153);
-            this.searchConnections.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchConnections.Margin = new System.Windows.Forms.Padding(4);
             this.searchConnections.Name = "searchConnections";
             this.searchConnections.Size = new System.Drawing.Size(363, 62);
             this.searchConnections.TabIndex = 1;
@@ -120,7 +120,6 @@
             this.label1.Size = new System.Drawing.Size(616, 77);
             this.label1.TabIndex = 7;
             this.label1.Text = "Mobility Connector";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -143,7 +142,7 @@
             this.Controls.Add(this.DepartureBoard);
             this.Controls.Add(this.searchConnections);
             this.Font = new System.Drawing.Font("Bodoni MT", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Menu";
             this.Text = "Menu";
             this.panel1.ResumeLayout(false);

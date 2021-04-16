@@ -75,7 +75,7 @@
             this.MailButton.TabIndex = 22;
             this.MailButton.Text = "E-Mail";
             this.MailButton.UseVisualStyleBackColor = true;
-
+            this.MailButton.Click += new System.EventHandler(this.MailButton_Click);
             // 
             // listBox1
             // 
@@ -84,7 +84,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(701, 212);
             this.listBox1.TabIndex = 23;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // DeleteButton
             // 
